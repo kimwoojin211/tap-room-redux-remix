@@ -2,6 +2,11 @@
 
 #### By **Woo Jin Kim**
 
+
+### Component Diagram
+
+![Keg Component Diagram](/./img/KegDiagram.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
