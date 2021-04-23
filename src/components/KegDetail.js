@@ -5,9 +5,12 @@ function KegDetail(props) {
   const { keg } = props;
   return (
     <React.Fragment>
-      <h3>{keg.brand} - {keg.name}</h3>
+      <hr />
+      <h2>{keg.brand}</h2>
+      <p><em>{keg.name}</em></p>
       <p><em>Alcohol Content: {keg.alcoholContent}%</em></p>
       <p><em>Price: ${keg.price}</em></p>
+      <p><em>Pints remaining: {keg.pints}</em></p>
       <hr />
     </React.Fragment>
   );

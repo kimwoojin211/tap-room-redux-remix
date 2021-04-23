@@ -14,7 +14,8 @@ function KegList(props) {
         alcoholContent={keg.alcoholContent}
         price={keg.price}
         id={keg.id}
-        key={keg.id} />
+        key={keg.id}
+        pints={124} />
     )}
   </React.Fragment>
   );
