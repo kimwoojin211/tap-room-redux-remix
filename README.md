@@ -1,7 +1,21 @@
 # Tap Room
 
+## A React application that allows a user to keep track of their inventory
+
 #### By **Woo Jin Kim**
 
+## Technologies Used
+
+* _Javascript_
+* _JSX_
+* _React_
+* _UUID_
+* _Node_
+
+
+## Known Bugs
+
+* _Pints remaining reverts to 124 when a keg is edited._
 
 ### Component Diagram
 
@@ -77,3 +91,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## License
+
+_MIT_
+
+## Contact Information
+
+_Woo Jin Kim (kimwoojin211@gmail.com)_
+
+Copyright (c) 2021 Woo Jin Kim
