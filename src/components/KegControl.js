@@ -25,29 +25,16 @@ class KegControl extends React.Component {
       });
     } else {
       const { dispatch } = this.props;
-      const action = {
-        type: 'TOGGLE_FORM'
-      }
+      const action = a.toggleForm();
       dispatch(action);
     }
   }
 
   handleAddingNewKegToList = (newKeg) => {
     const { dispatch } = this.props;
-    const { name, brand, alcoholContent, price, id, pints } = newKeg;
-    const action = {
-      type: 'ADD_KEG',
-      name: name,
-      brand: brand,
-      alcoholContent: alcoholContent,
-      price: price,
-      id: id,
-      pints: pints
-    }
+    const action = a.addKeg(newKeg);
     dispatch(action);
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
+    const action2 = a.toggleForm();
     dispatch(action2);
   }
 
@@ -63,49 +50,29 @@ class KegControl extends React.Component {
   
   handleEditingKegInList = (kegToEdit) => {
     const { dispatch } = this.props;
-    const { name, brand, alcoholContent, price, id, pints } = kegToEdit;
-    const action = {
-      type: 'ADD_KEG',
-      name: name,
-      brand: brand,
-      alcoholContent: alcoholContent,
-      price: price,
-      id: id,
-      pints: pints
-    }
+    const action = a.addKeg(kegToEdit);
     dispatch(action);
-    this.setState({ 
+    this.setState({
       editing: false,
-      selectedKeg: null 
+      selectedKeg: null
     });
   }
   
   handleSellingPint = (kegToEdit) => {
     if (kegToEdit.pints > 0){
       const { dispatch } = this.props;
-      const { name, brand, alcoholContent, price, id, pints } = kegToEdit;
-      const action = {
-        type: 'ADD_KEG',
-        name: name,
-        brand: brand,
-        alcoholContent: alcoholContent,
-        price: price,
-        id: id,
-        pints: pints-1
-      };
+      const kegPintSold = { ...kegToEdit, pints: kegToEdit.pints - 1 };
+      const action = a.addKeg(kegPintSold)
       dispatch(action);
       this.setState({ 
-        selectedKeg: { ...kegToEdit, pints: kegToEdit.pints - 1 }
+        selectedKeg: kegPintSold
       });
     }
   }
   
   handleDeletingKeg = (id) => {
     const { dispatch } = this.props;
-    const action = {
-      type: 'DELETE_KEG',
-      id: id
-    }
+    const action = a.deleteKeg(id);
     dispatch(action);
     this.setState({ selectedKeg: null });
   }
