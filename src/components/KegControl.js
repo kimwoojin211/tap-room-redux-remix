@@ -31,11 +31,13 @@ class KegControl extends React.Component {
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    const { dispatch } = this.props;
-    const action = a.addKeg(newKeg);
-    dispatch(action);
-    const action2 = a.toggleForm();
-    dispatch(action2);
+    if (!(newKeg.name === "" || newKeg.brand === "" || newKeg.alcoholContent === "" || newKeg.price === "" )){
+      const { dispatch } = this.props;
+      const action = a.addKeg(newKeg);
+      dispatch(action);
+      const action2 = a.toggleForm();
+      dispatch(action2);
+    }
   }
 
   handleChangingSelectedKeg = (id) => {
@@ -49,13 +51,15 @@ class KegControl extends React.Component {
   }
 
   handleEditingKegInList = (kegToEdit) => {
-    const { dispatch } = this.props;
-    const action = a.addKeg(kegToEdit);
-    dispatch(action);
-    this.setState({
-      editing: false,
-      selectedKeg: null
-    });
+    if (!(kegToEdit.name === "" || kegToEdit.brand === "" || kegToEdit.alcoholContent === "" || kegToEdit.price === "")) {
+      const { dispatch } = this.props;
+      const action = a.addKeg(kegToEdit);
+      dispatch(action);
+      this.setState({
+        editing: false,
+        selectedKeg: null
+      });
+    }
   }
 
   handleSellingPint = (kegToEdit) => {
