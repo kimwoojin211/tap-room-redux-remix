@@ -52,18 +52,7 @@ class KegControl extends React.Component {
     this.setState({ selectedKeg: selectedKeg });
   }
 
-  handleSellingPint = (id) => {
-    const selectedKeg = this.props.masterKegList[id];
-    if(selectedKeg.pints > 0){
-      const selectedKegPintSold = { ...selectedKeg, pints: selectedKeg.pints - 1 };
-      const newMasterKegList = this.props.masterKegList.filter(keg => keg.id !== id).concat(selectedKegPintSold);
-      this.setState({
-        masterKegList: newMasterKegList,
-        selectedKeg: selectedKegPintSold
-      });
-    }
-  }
-
+  
   handleEditClick = () => {
     this.setState({ editing: true });
   }
@@ -79,13 +68,33 @@ class KegControl extends React.Component {
       price: price,
       id: id,
       pints: pints
-      }
+    }
+    dispatch(action);
+    this.setState({ 
+      editing: false,
+      selectedKeg: null 
+    });
+  }
+  
+  handleSellingPint = (kegToEdit) => {
+    if (kegToEdit.pints > 0){
+      const { dispatch } = this.props;
+      const { name, brand, alcoholContent, price, id, pints } = kegToEdit;
+      const action = {
+        type: 'ADD_KEG',
+        name: name,
+        brand: brand,
+        alcoholContent: alcoholContent,
+        price: price,
+        id: id,
+        pints: pints-1
+      };
       dispatch(action);
       this.setState({ 
-        editing: false,
-        selectedKeg: null 
+        selectedKeg: { ...kegToEdit, pints: kegToEdit.pints - 1 }
       });
     }
+  }
 
   render() {
     let currentlyVisibleState = null;
