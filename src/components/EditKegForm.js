@@ -19,7 +19,8 @@ function EditKegForm (props){
 
 EditKegForm.propTypes = {
   keg: PropTypes.object,
-  onEditKeg: PropTypes.func
+  onEditKeg: PropTypes.func,
+  formSubmissionHandler: PropTypes.func
 };
 
 export default EditKegForm;
