@@ -13,6 +13,12 @@ export default (state = {}, action) => {
           pints: pints
         }
       });
+    
+    case 'DELETE_KEG':
+      let newState = {...state};
+      delete newState[id];
+      return newState;
+    
     default:
       return state;
     }
