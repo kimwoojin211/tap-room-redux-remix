@@ -1,4 +1,4 @@
-# Tap Room
+# Tap Room REDUX REMIX
 
 ## A React application that allows a user to keep track of their inventory
 
