@@ -29,6 +29,7 @@ function ReusableForm(props) {
 
 ReusableForm.propTypes = {
   onNewKegCreation: PropTypes.func,
+  formSubmissionHandler: PropTypes.func,
   buttonText:PropTypes.string
 };
 

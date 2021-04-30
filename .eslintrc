@@ -1,0 +1,29 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jquery": true,
+    "node": true
+  },
+  "rules": {
+    "semi": 1,
+    "indent": [
+      "warn",
+      2
+    ],
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-case-declarations":"off",
+    "react/no-unescaped-entities": "warn",
+    "no-class-assign": "off",
+    "react/prop-types": "off"
+  }
+}

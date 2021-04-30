@@ -19,7 +19,7 @@
 
 ### Component Diagram
 
-![Keg Component Diagram](/./img/KegDiagram.png)
+![Keg Component Diagram](/src/img/KegDiagram.PNG)
 
 # Getting Started with Create React App
 

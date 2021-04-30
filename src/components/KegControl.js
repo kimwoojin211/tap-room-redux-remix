@@ -43,11 +43,11 @@ class KegControl extends React.Component {
     this.setState({ selectedKeg: selectedKeg });
   }
 
-  
+
   handleEditClick = () => {
     this.setState({ editing: true });
   }
-  
+
   handleEditingKegInList = (kegToEdit) => {
     const { dispatch } = this.props;
     const action = a.addKeg(kegToEdit);
@@ -57,19 +57,19 @@ class KegControl extends React.Component {
       selectedKeg: null
     });
   }
-  
+
   handleSellingPint = (kegToEdit) => {
-    if (kegToEdit.pints > 0){
+    if (kegToEdit.pints > 0) {
       const { dispatch } = this.props;
       const kegPintSold = { ...kegToEdit, pints: kegToEdit.pints - 1 };
-      const action = a.addKeg(kegPintSold)
+      const action = a.addKeg(kegPintSold);
       dispatch(action);
-      this.setState({ 
+      this.setState({
         selectedKeg: kegPintSold
       });
     }
   }
-  
+
   handleDeletingKeg = (id) => {
     const { dispatch } = this.props;
     const action = a.deleteKeg(id);
@@ -80,17 +80,17 @@ class KegControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if(this.state.editing){
-      currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList} />
+    if (this.state.editing) {
+      currentlyVisibleState = <EditKegForm keg={this.state.selectedKeg} onEditKeg={this.handleEditingKegInList} />;
       buttonText = "Return to Keg List";
     }
     else if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail 
-        keg={this.state.selectedKeg} 
+      currentlyVisibleState = <KegDetail
+        keg={this.state.selectedKeg}
         onClickingSellPint={this.handleSellingPint}
         onClickingEdit={this.handleEditClick}
         onClickingDelete={this.handleDeletingKeg}
-        />
+      />;
       buttonText = "Return to Keg List";
     } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />;
@@ -111,8 +111,8 @@ const mapStateToProps = state => {
   return {
     masterKegList: state.masterKegList,
     formVisibleOnPage: state.formVisibleOnPage
-  }
-}
+  };
+};
 
 KegControl.propTypes = {
   masterKegList: PropTypes.object,

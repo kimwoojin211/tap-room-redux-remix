@@ -19,5 +19,5 @@ export const addKeg = (keg) => {
     price: price,
     id: id,
     pints: pints
-  }
-}
+  };
+};
