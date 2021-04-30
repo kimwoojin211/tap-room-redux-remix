@@ -13,5 +13,17 @@ describe('help queue actions', () => {
       type: 'TOGGLE_FORM'
     });
   });
-  
+
+  it('addKeg should create ADD_KEG action', () => {
+    expect(actions.addKeg({name: "Keggie", brand: "Keggles", alcoholContent: "96", price: "46290", id: 1, ints: 124 })).toEqual({
+      type: 'ADD_KEG',
+      name: "Keggie",
+      brand: "Keggles",
+      alcoholContent: "96",
+      price: "46290",
+      id: 1,
+      pints: 124
+    });
+  });
+
 });
