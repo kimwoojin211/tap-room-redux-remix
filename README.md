@@ -1,6 +1,6 @@
 # Tap Room REDUX REMIX
 
-## A React application that allows a user to keep track of their inventory
+## A Remixed version of the [Tap Room](https://github.com/kimwoojin211/tap-room) application, using Redux to store states
 
 #### By **Woo Jin Kim**
 
@@ -9,17 +9,27 @@
 * _Javascript_
 * _JSX_
 * _React_
+* _Redux_
+* _React Redux_
 * _UUID_
-* _Node_
-
-
-## Known Bugs
-
-* _Pints remaining reverts to 124 when a keg is edited._
+* _Node.js_
+* _NPM_
+* _JEST_
+* _ESLint_
 
 ### Component Diagram
 
 ![Keg Component Diagram](/src/img/KegDiagram.PNG)
+
+## Setup/Installation Requirements
+
+1. In your terminal of choice, navigate to the desired location on your local machine and run the command `git clone https://github.com/kimwoojin211/tap-room-redux-remix` (alternatively, download the zipped folder from the URL and unzip the folder in your desired folder)
+2. Navigate into the newly created directory.
+3. Ensure Node and NPM are installed on your machine. (See [here](https://www.npmjs.com/get-npm) for more info)
+4. Enter `npm install` to install dependencies into the project
+5. Enter `npm run start` into your terminal to launch the application.
+6. To exit live server, press Ctrl+C in your terminal.
+7. For more information on React, please see the section below.
 
 # Getting Started with Create React App
 
@@ -91,6 +101,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Known Bugs
+
+* _Pints remaining automatically reverts to 124 when a keg is edited._
+* _Attempting to submit incomplete forms does not produce message._
+* _No styling_
 
 
 ## License
