@@ -4,7 +4,7 @@ import KegControl from "./KegControl";
 
 function App() {
   const myStyledComponentStyles = {
-    backgroundColor: '#915336',
+    backgroundColor: '#d3d3d3',
     width: '100%',
     height: '100%',
     position: 'absolute'

@@ -1,6 +1,5 @@
 import React from "react";
 import Keg from "./Keg";
-import KegJPG from "../img/Keg.png";
 import PropTypes from "prop-types";
 
 function KegList(props) {
@@ -8,7 +7,6 @@ function KegList(props) {
     <React.Fragment>
       <h2>Click on a Keg to view its details</h2>
       <hr />
-      <img src={KegJPG}></img>
       {Object.values(props.kegList).map((keg) =>
         <Keg
           whenKegClicked={props.onKegSelection}
